@@ -29,6 +29,11 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -307,6 +312,7 @@ Full-Width Styles
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+  font-family: 'Computer Modern';
 }
 
 #project_tagline {
@@ -315,6 +321,7 @@ Full-Width Styles
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
+  font-family: 'Computer Modern';
 }
 
 #downloads {

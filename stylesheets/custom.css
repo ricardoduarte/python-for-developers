@@ -1,0 +1,30 @@
+h4 {
+    font-weight: normal;
+    text-align: justify;
+}
+
+#TOC, #book-cover {
+    width: 50%;
+    float: left;
+}
+
+#TOC {
+    font-size: 130%;
+}
+
+#main_content_wrap p, #main_content_wrap ol {
+    text-align: justify;
+}
+
+#main_content_wrap ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+#main_content_wrap ul li a {
+    font-weight: bold;
+}
+
+#image-cc {
+    width: auto !important;
+}
