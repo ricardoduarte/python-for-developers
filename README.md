@@ -1,5 +1,7 @@
 Python for Developers
 =====================
+First edition
+-------------
 This book is geared toward those who already have programming knowledge. It covers topics that include: creation of user interfaces, computer graphics, internet applications, distributed systems, among other issues.
 
 Foreword
