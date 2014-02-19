@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<ipython-input-3-504455bf1c17>", line 5, in <module>
+    fn = raw_input('Nome do arquivo: ').strip()
+  File "/usr/local/lib/python2.7/dist-packages/IPython/zmq/ipkernel.py", line 345, in <lambda>
+    raw_input = lambda prompt='' : self._no_raw_input()
+  File "/usr/local/lib/python2.7/dist-packages/IPython/zmq/ipkernel.py", line 688, in _no_raw_input
+    raise StdinNotImplementedError("raw_input was called, but this "
+StdinNotImplementedError: raw_input was called, but this frontend does not support stdin.
+Traceback (most recent call last):
+  File "<ipython-input-2-9b040ca279e5>", line 8, in <module>
+    for i, s in enumerate(file(fn)):
+IOError: [Errno 2] No such file or directory: 'test'
