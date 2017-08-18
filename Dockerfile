@@ -1,18 +1,17 @@
 # build with `docker build -t dockername:tag .`
 # run with `docker run -p 8888:8888 dockername:tag`
 # open http://localhost:8888 in browser
-FROM debian
+FROM jupyter/base-notebook
 
-RUN apt-get update && apt-get install -y python python-pip
-RUN pip install jupyter
+USER root
+RUN /bin/bash -c "conda create --yes -n py27 python=2.7; source activate py27; conda install --yes notebook ipykernel; ipython kernel install"
+RUN rm -rfv /opt/conda/share/jupyter/kernels/python3/
 
-RUN mkdir /var/www
-COPY . /var/www
-WORKDIR /var/www
+COPY . /home/jovyan
+RUN chown -R jovyan:users /home/jovyan
 
 # config to run without authentication
-RUN mkdir /root/.jupyter
-RUN echo "c.NotebookApp.token = u''" >> /root/.jupyter/jupyter_notebook_config.py
-
-CMD ["jupyter-notebook", "--no-browser", "--ip=0.0.0.0", "--allow-root"] # to prevent listening on IPv6
+USER jovyan
+RUN mkdir /home/jovyan/.jupyter >> /dev/null || echo ""
+RUN echo "c.NotebookApp.token = u''" >> /home/jovyan/.jupyter/jupyter_notebook_config.py
 
