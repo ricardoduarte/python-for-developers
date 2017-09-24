@@ -10,9 +10,4 @@ COPY . /home/jovyan
 RUN chown -R jovyan:users /home/jovyan
 RUN echo 'PATH="$PATH:/opt/conda/bin"' >> .bashrc
 
-# config to run without authentication
-USER jovyan
-RUN mkdir /home/jovyan/.jupyter >> /dev/null || echo ""
-RUN echo "c.NotebookApp.token = u''" >> /home/jovyan/.jupyter/jupyter_notebook_config.py
-
 CMD /bin/bash -c "source activate py27; start-notebook.sh"
