@@ -19,3 +19,16 @@ The e-book "Python para Desenvolvedores" ("Python for Developers") aimed to fill
 This e-book was originally written in Portuguese and was translated by a small group of volunteers who do not speak English natively, so we ask for help from those who know the English language better, to refine the work, which we believe is a meaningful contribution to the Python users around the world.
 
 Visit the e-book website: [http://ricardoduarte.github.io/python-for-developers/](http://ricardoduarte.github.io/python-for-developers/)
+
+Run in docker
+-------------
+There is a dockerfile prepared to ease the deployment of the notebook.
+
+To build and run the container run the following commands
+
+```
+docker build -t python-for-developers:latest .
+docker run -itp 8888:8888 python-for-developers:latest
+```
+
+After this the notebook will be available at `http://localhost:8888` with the token printed to the terminal.
